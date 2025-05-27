@@ -310,6 +310,64 @@ git add .
 git commit -m "Day 0: Project scaffolding, tool setup, sanity test, and CI"
 git remote add origin https://github.com/ishi3012/medsentinel.git
 git push -u origin main
-
-
 ```
+
+# ✅ MedSentinel Git + CI Preflight Commands
+### 🔹 1. Make sure you're on the correct branch
+```bash
+git status
+```
+Check:
+
+You’re on main or a feature branch (e.g., feat/day2-cot-skill)
+
+There are no uncommitted changes unless intentional
+
+### 🔹 2. Pull latest changes from GitHub
+```bash
+git pull --rebase
+```
+Prevents push conflicts and keeps your history clean
+
+### 🔹 3. Run full quality gates (via Makefile)
+```bash
+
+make format      # Format with black
+make lint        # Check code style with ruff
+make typecheck   # Run mypy static type checks
+make test        # Run all tests
+
+# or if you’re confident:
+
+make check       # Run all above except formatting
+```
+### 🔹 4. Run pre-commit manually (catches missed stuff)
+```bash
+pre-commit run --all-files
+```
+Useful if you haven’t committed yet or added new files
+
+### 🔹 5. Stage and commit cleanly
+```bash
+
+git add .
+git commit -m "feat: Add <module> with tests and CI pass"
+```
+### 🔹 6. Push to remote
+```bash
+git push origin <branch-name>
+# If on main, use:
+git push
+
+#If on a feature branch:
+git push -u origin feat/day2-cot-skill
+```
+## 🧠 Bonus: Clean Git Hygiene 
+| Habit                                            | Command                  |
+| ------------------------------------------------ | ------------------------ |
+| Restore a deleted file you didn’t mean to remove | `git restore <file>`     |
+| See what exactly changed before commit           | `git diff`               |
+| Interactively stage only parts of a file         | `git add -p`             |
+| Re-run CI locally if needed                      | `make check` or `pytest` |
+| Check ignored files                              | `cat .gitignore`         |
+
