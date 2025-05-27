@@ -1,7 +1,7 @@
 .PHONY: lint format test typecheck all check
 
 lint:
-	ruff check medsentinel tests
+	python -m ruff check medsentinel tests
 
 format:
 	black medsentinel tests
