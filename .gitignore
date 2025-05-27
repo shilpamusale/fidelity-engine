@@ -1,0 +1,38 @@
+# Python virtualenv
+.venv/
+venv/
+ENV/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Pytest cache
+.pytest_cache/
+
+# Mypy cache
+.mypy_cache/
+
+# Ruff cache
+.ruff_cache/
+
+# VSCode and other IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Dependency lock
+pip-log.txt
+
+# Coverage reports (if added later)
+htmlcov/
+.coverage
+
+# Compiled files
+*.so
