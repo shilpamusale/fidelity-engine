@@ -27,6 +27,7 @@ from typing import Any, Dict
 
 from medsentinel.skills.base import BaseSkill
 
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 

@@ -28,6 +28,7 @@ from medsentinel.llm.vertex_palm import call_palm_api
 from medsentinel.logs.prompt_logger import log_prompt
 
 # Initialize Logging
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
