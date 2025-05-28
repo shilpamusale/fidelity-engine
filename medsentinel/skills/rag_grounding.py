@@ -20,11 +20,15 @@ Responsibilities:
 Author: MedSentinel Team (2025)
 """
 
+import logging
 from typing import Dict, Any, List
 from medsentinel.skills.base import BaseSkill
 from medsentinel.retrievers.base import RetrieverInterface
 from medsentinel.llm.vertex_palm import call_palm_api
 from medsentinel.logs.prompt_logger import log_prompt
+
+# Initialize Logging
+logger = logging.getLogger(__name__)
 
 
 class RAGGroundingSkill(BaseSkill):
@@ -40,8 +44,13 @@ class RAGGroundingSkill(BaseSkill):
         query = input_data.get("query", "")
         prediction = input_data.get("prediction", "")
 
+        logger.info("Running RAGGroundingSkill.")
+        logger.debug(f"Received input query: {query}")
+        logger.debug(f"Received input prediction: {prediction}")
+
         # Step 1: Retrieve documents
         docs: List[str] = self.retriever.retrieve(query, top_k=3)
+        logger.debug(f"Retrieved documents: {docs}")
 
         # Step 2: Compose prompt
         context = "\n".join(docs)
@@ -53,9 +62,11 @@ class RAGGroundingSkill(BaseSkill):
         )
 
         # step 3: Log prompt
+        logger.debug(f"Constructed LLM prompt:\n{prompt}")
         log_prompt(skill=self.skill_name, prompt=prompt)
 
         # Step 4: Call LLM(mocked)
         explanatoion = call_palm_api(prompt)
+        logger.info("LLM call complete. Explanation received.")
 
         return {"grounded_rationale": explanatoion, "docs_used": docs}
