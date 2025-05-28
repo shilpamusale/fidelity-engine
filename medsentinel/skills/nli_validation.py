@@ -34,6 +34,7 @@ from typing import Dict, Any
 from medsentinel.skills.base import BaseSkill
 
 # Initialize Logging
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
@@ -45,15 +46,10 @@ class NLIValidationSkill(BaseSkill):
         premise = input_data.get("premise", "")
         hypothesis = input_data.get("hypothesis", "")
 
-        logger.info(
-            f"NLIValidationSkill input — Premise: '{premise}' | Hypothesis: '{hypothesis}'"
-        )
+        logger.info(f"NLIValidationSkill input — Premise: '{premise}' | Hypothesis: '{hypothesis}'")
 
         # Stub logic — will be replaced with model later
-        if (
-            "3500mg of sodium" in premise
-            and "within recommended sodium limits" in hypothesis
-        ):
+        if "3500mg of sodium" in premise and "within recommended sodium limits" in hypothesis:
             verdict = "contradiction"
             confidence = 0.92
         elif "salt" in hypothesis and "salt" not in premise:

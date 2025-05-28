@@ -23,9 +23,7 @@ from medsentinel.skills.nli_validation import NLIValidationSkill
         ("The patient drinks water.", "The patient stays hydrated.", "entailment"),
     ],
 )
-def test_nli_validation_stub(
-    premise: str, hypothesis: str, expected_verdict: str
-) -> None:
+def test_nli_validation_stub(premise: str, hypothesis: str, expected_verdict: str) -> None:
     skill = NLIValidationSkill()
     output = skill.run({"premise": premise, "hypothesis": hypothesis})
     assert output["verdict"] == expected_verdict
