@@ -22,3 +22,8 @@ typecheck:
 # Test target
 test:
 	pytest --maxfail=1 --disable-warnings -q
+format:
+	black $(SRC)
+
+coverage:
+	pytest --maxfail=1 --disable-warnings --cov=$(SRC) --cov-report=term-missing -q

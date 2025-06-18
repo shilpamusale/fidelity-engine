@@ -35,31 +35,31 @@
 
 import csv
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Sequence  # , Dict
 
 DATA_DIR = Path(__file__).parent / "data"
 PROMPTS_CSV = DATA_DIR / "prompts.csv"
 
-def load_kb(csv_path: Path = PROMPTS_CSV) -> Dict[str, Any]:
-    kb: Dict[str, Any] = {}
+
+# nli_filtered_agent/kb_mapping.py
+
+
+def load_kb(csv_path: Path = PROMPTS_CSV) -> dict[str, Any]:
+    kb: dict[str, Any] = {}
     with csv_path.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
+
+        # Assert we actually have headers
+        if reader.fieldnames is None:
+            raise ValueError(f"No header row found in {csv_path}")
+        fieldnames: Sequence[str] = reader.fieldnames
+
         for row in reader:
-            # 1) Get the prompt text from the "Prompt" column
             prompt_text = row["Prompt"]
-
-            # 2) Build answers dict from *all* other columns
-            answers = {
-                col_name: row[col_name]
-                for col_name in reader.fieldnames
-                if col_name != "Prompt"
-            }
-
-            kb[prompt_text] = {
-                "premise": prompt_text,  # we only have one text column
-                "answers": answers,
-            }
+            answers = {col: row[col] for col in fieldnames if col != "Prompt"}
+            kb[prompt_text] = {"premise": prompt_text, "answers": answers}
     return kb
+
 
 # module‐level variable your tests import
 kb = load_kb()
