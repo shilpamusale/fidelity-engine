@@ -1,38 +1,31 @@
-# Python virtualenv
+# Python virtual environment
 .venv/
 venv/
 ENV/
-env/
 
 # Python bytecode
 __pycache__/
 *.py[cod]
+*$py.class
 
-# Jupyter Notebooks
-.ipynb_checkpoints/
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
 
-# Pytest cache
-.pytest_cache/
-
-# Mypy cache
-.mypy_cache/
-
-# Ruff cache
-.ruff_cache/
-
-# VSCode and other IDEs
-.vscode/
+# IDE specific files
 .idea/
+.vscode/
+*.swp
+*.swo
 
-# OS files
+# Environment variables
+.env
+.env.*
+*/.env
+*/.env.*
+.env copy
+*/.env copy
+
+# OS specific files
 .DS_Store
-
-# Dependency lock
-pip-log.txt
-
-# Coverage reports (if added later)
-htmlcov/
-.coverage
-
-# Compiled files
-*.so

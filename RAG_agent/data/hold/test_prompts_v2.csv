@@ -1,0 +1,301 @@
+prompt,target_answer,in_kb
+How many moons does Mars have?,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+Name one dark‑green leafy vegetable classified as a 'protective' food.,Spinach,True
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+Who was the 30th president of the United States?,NOT_IN_KB,False
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give one key recommendation from the handbook about complementary feeding.,Refer to the handbook section on complementary feeding.,True
+What household practice does the handbook advise to reduce aflatoxin contamination in groundnuts?,Proper sun-drying before storage,True
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give one key recommendation from the handbook about exclusive breast‑feeding.,Refer to the handbook section on exclusive breast‑feeding.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Give one key recommendation from the handbook about iodine.,Refer to the handbook section on iodine.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Who invented Bluetooth technology?,NOT_IN_KB,False
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Give one key recommendation from the handbook about anaemia.,Refer to the handbook section on anaemia.,True
+Who invented Bluetooth technology?,NOT_IN_KB,False
+Give one key recommendation from the handbook about complementary feeding.,Refer to the handbook section on complementary feeding.,True
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+Who invented Bluetooth technology?,NOT_IN_KB,False
+Who was the 30th president of the United States?,NOT_IN_KB,False
+Give one key recommendation from the handbook about diarrhoea prevention.,Refer to the handbook section on diarrhoea prevention.,True
+Give one key recommendation from the handbook about balanced diet.,Refer to the handbook section on balanced diet.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+Give one key recommendation from the handbook about diarrhoea prevention.,Refer to the handbook section on diarrhoea prevention.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Give one key recommendation from the handbook about anaemia.,Refer to the handbook section on anaemia.,True
+Give one key recommendation from the handbook about safe cooking temperatures.,Refer to the handbook section on safe cooking temperatures.,True
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give one key recommendation from the handbook about food storage.,Refer to the handbook section on food storage.,True
+"State the recommended percentage of total calories that should come from fats, as per the handbook.",Not more than 30%,True
+Give one key recommendation from the handbook about hydration.,Refer to the handbook section on hydration.,True
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+Give one key recommendation from the handbook about protein.,Refer to the handbook section on protein.,True
+Give one key recommendation from the handbook about hand washing.,Refer to the handbook section on hand washing.,True
+Give one key recommendation from the handbook about vitamin A.,Refer to the handbook section on vitamin A.,True
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+Give one key recommendation from the handbook about hydration.,Refer to the handbook section on hydration.,True
+Give one key recommendation from the handbook about exclusive breast‑feeding.,Refer to the handbook section on exclusive breast‑feeding.,True
+How many moons does Mars have?,NOT_IN_KB,False
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give one key recommendation from the handbook about safe cooking temperatures.,Refer to the handbook section on safe cooking temperatures.,True
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Give one key recommendation from the handbook about calcium.,Refer to the handbook section on calcium.,True
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+Give one key recommendation from the handbook about exclusive breast‑feeding.,Refer to the handbook section on exclusive breast‑feeding.,True
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give one key recommendation from the handbook about diarrhoea prevention.,Refer to the handbook section on diarrhoea prevention.,True
+Give one key recommendation from the handbook about cholesterol.,Refer to the handbook section on cholesterol.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Give one key recommendation from the handbook about calcium.,Refer to the handbook section on calcium.,True
+Who was the 30th president of the United States?,NOT_IN_KB,False
+Give one key recommendation from the handbook about diarrhoea prevention.,Refer to the handbook section on diarrhoea prevention.,True
+List one advantage of exclusive breast‑feeding highlighted in the handbook.,Reduced risk of diarrhoeal diseases,True
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Give one key recommendation from the handbook about food storage.,Refer to the handbook section on food storage.,True
+Give one key recommendation from the handbook about complementary feeding.,Refer to the handbook section on complementary feeding.,True
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Give one key recommendation from the handbook about balanced diet.,Refer to the handbook section on balanced diet.,True
+Who was the 30th president of the United States?,NOT_IN_KB,False
+Give one key recommendation from the handbook about physical activity.,Refer to the handbook section on physical activity.,True
+Give one key recommendation from the handbook about hydration.,Refer to the handbook section on hydration.,True
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Give one key recommendation from the handbook about food processing.,Refer to the handbook section on food processing.,True
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give one key recommendation from the handbook about physical activity.,Refer to the handbook section on physical activity.,True
+Give one key recommendation from the handbook about anaemia.,Refer to the handbook section on anaemia.,True
+Give one key recommendation from the handbook about food processing.,Refer to the handbook section on food processing.,True
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+Give one key recommendation from the handbook about balanced diet.,Refer to the handbook section on balanced diet.,True
+Give one key recommendation from the handbook about complementary feeding.,Refer to the handbook section on complementary feeding.,True
+Give one key recommendation from the handbook about vitamin A.,Refer to the handbook section on vitamin A.,True
+Give one key recommendation from the handbook about food storage.,Refer to the handbook section on food storage.,True
+Give one key recommendation from the handbook about protein.,Refer to the handbook section on protein.,True
+Give one key recommendation from the handbook about vitamin C.,Refer to the handbook section on vitamin C.,True
+Give one key recommendation from the handbook about zinc.,Refer to the handbook section on zinc.,True
+Give one key recommendation from the handbook about iodine.,Refer to the handbook section on iodine.,True
+Who invented Bluetooth technology?,NOT_IN_KB,False
+Give one key recommendation from the handbook about food processing.,Refer to the handbook section on food processing.,True
+Give one key recommendation from the handbook about iodine.,Refer to the handbook section on iodine.,True
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+Give one key recommendation from the handbook about anaemia.,Refer to the handbook section on anaemia.,True
+Give one key recommendation from the handbook about vitamin C.,Refer to the handbook section on vitamin C.,True
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Give one key recommendation from the handbook about anaemia.,Refer to the handbook section on anaemia.,True
+Who was the 30th president of the United States?,NOT_IN_KB,False
+Give one key recommendation from the handbook about food processing.,Refer to the handbook section on food processing.,True
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+Give one key recommendation from the handbook about vitamin A.,Refer to the handbook section on vitamin A.,True
+Give one key recommendation from the handbook about food storage.,Refer to the handbook section on food storage.,True
+Who invented Bluetooth technology?,NOT_IN_KB,False
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Give one key recommendation from the handbook about cholesterol.,Refer to the handbook section on cholesterol.,True
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+Give one key recommendation from the handbook about zinc.,Refer to the handbook section on zinc.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Give one key recommendation from the handbook about cholesterol.,Refer to the handbook section on cholesterol.,True
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+Who invented Bluetooth technology?,NOT_IN_KB,False
+Give one key recommendation from the handbook about food processing.,Refer to the handbook section on food processing.,True
+Give one key recommendation from the handbook about food storage.,Refer to the handbook section on food storage.,True
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+Who was the 30th president of the United States?,NOT_IN_KB,False
+Give one key recommendation from the handbook about hydration.,Refer to the handbook section on hydration.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+Give one key recommendation from the handbook about vitamin A.,Refer to the handbook section on vitamin A.,True
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Give one key recommendation from the handbook about protein.,Refer to the handbook section on protein.,True
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Who was the 30th president of the United States?,NOT_IN_KB,False
+Give one key recommendation from the handbook about hand washing.,Refer to the handbook section on hand washing.,True
+Give one key recommendation from the handbook about diarrhoea prevention.,Refer to the handbook section on diarrhoea prevention.,True
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+Name two vitamin C–rich fruits mentioned in the handbook.,Guava and oranges,True
+Give one key recommendation from the handbook about protein.,Refer to the handbook section on protein.,True
+Give one key recommendation from the handbook about safe cooking temperatures.,Refer to the handbook section on safe cooking temperatures.,True
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+Give one key recommendation from the handbook about exclusive breast‑feeding.,Refer to the handbook section on exclusive breast‑feeding.,True
+How many moons does Mars have?,NOT_IN_KB,False
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Give one key recommendation from the handbook about physical activity.,Refer to the handbook section on physical activity.,True
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+Give one key recommendation from the handbook about cholesterol.,Refer to the handbook section on cholesterol.,True
+Give one key recommendation from the handbook about diarrhoea prevention.,Refer to the handbook section on diarrhoea prevention.,True
+How many moons does Mars have?,NOT_IN_KB,False
+Give one key recommendation from the handbook about safe cooking temperatures.,Refer to the handbook section on safe cooking temperatures.,True
+Who was the 30th president of the United States?,NOT_IN_KB,False
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+How many moons does Mars have?,NOT_IN_KB,False
+Who invented Bluetooth technology?,NOT_IN_KB,False
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+Give one key recommendation from the handbook about safe cooking temperatures.,Refer to the handbook section on safe cooking temperatures.,True
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+Give one key recommendation from the handbook about physical activity.,Refer to the handbook section on physical activity.,True
+Who invented Bluetooth technology?,NOT_IN_KB,False
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give one key recommendation from the handbook about complementary feeding.,Refer to the handbook section on complementary feeding.,True
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+Give one key recommendation from the handbook about balanced diet.,Refer to the handbook section on balanced diet.,True
+Give one key recommendation from the handbook about zinc.,Refer to the handbook section on zinc.,True
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Give one key recommendation from the handbook about food processing.,Refer to the handbook section on food processing.,True
+Give one key recommendation from the handbook about calcium.,Refer to the handbook section on calcium.,True
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Who invented Bluetooth technology?,NOT_IN_KB,False
+Give one key recommendation from the handbook about diarrhoea prevention.,Refer to the handbook section on diarrhoea prevention.,True
+Give one key recommendation from the handbook about physical activity.,Refer to the handbook section on physical activity.,True
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+Give one key recommendation from the handbook about protein.,Refer to the handbook section on protein.,True
+Give one key recommendation from the handbook about anaemia.,Refer to the handbook section on anaemia.,True
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give one key recommendation from the handbook about cholesterol.,Refer to the handbook section on cholesterol.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+How many kilocalories are provided by one gram of protein according to the handbook?,4 kcal,True
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Give one key recommendation from the handbook about anaemia.,Refer to the handbook section on anaemia.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+How many moons does Mars have?,NOT_IN_KB,False
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+Give one key recommendation from the handbook about zinc.,Refer to the handbook section on zinc.,True
+Give one key recommendation from the handbook about hydration.,Refer to the handbook section on hydration.,True
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+Who was the 30th president of the United States?,NOT_IN_KB,False
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+Give one key recommendation from the handbook about physical activity.,Refer to the handbook section on physical activity.,True
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Which micronutrient deficiency leads to goitre as described in the handbook?,Iodine deficiency,True
+Give one key recommendation from the handbook about food storage.,Refer to the handbook section on food storage.,True
+Give one key recommendation from the handbook about zinc.,Refer to the handbook section on zinc.,True
+Who was the 30th president of the United States?,NOT_IN_KB,False
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+Who invented Bluetooth technology?,NOT_IN_KB,False
+Give one key recommendation from the handbook about safe cooking temperatures.,Refer to the handbook section on safe cooking temperatures.,True
+Give one key recommendation from the handbook about safe cooking temperatures.,Refer to the handbook section on safe cooking temperatures.,True
+Give one key recommendation from the handbook about food storage.,Refer to the handbook section on food storage.,True
+Give one key recommendation from the handbook about physical activity.,Refer to the handbook section on physical activity.,True
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+What is the minimum hand‑washing duration suggested in the handbook?,At least 20 seconds,True
+Give one key recommendation from the handbook about vitamin C.,Refer to the handbook section on vitamin C.,True
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+Give one key recommendation from the handbook about cholesterol.,Refer to the handbook section on cholesterol.,True
+Give one key recommendation from the handbook about hydration.,Refer to the handbook section on hydration.,True
+Who was the 30th president of the United States?,NOT_IN_KB,False
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+Give one key recommendation from the handbook about balanced diet.,Refer to the handbook section on balanced diet.,True
+Give one key recommendation from the handbook about vitamin A.,Refer to the handbook section on vitamin A.,True
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Give one key recommendation from the handbook about cholesterol.,Refer to the handbook section on cholesterol.,True
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give one key recommendation from the handbook about exclusive breast‑feeding.,Refer to the handbook section on exclusive breast‑feeding.,True
+Give one key recommendation from the handbook about vitamin C.,Refer to the handbook section on vitamin C.,True
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Give one key recommendation from the handbook about zinc.,Refer to the handbook section on zinc.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+Give one key recommendation from the handbook about calcium.,Refer to the handbook section on calcium.,True
+Give one key recommendation from the handbook about zinc.,Refer to the handbook section on zinc.,True
+Give one key recommendation from the handbook about iodine.,Refer to the handbook section on iodine.,True
+How many moons does Mars have?,NOT_IN_KB,False
+Who was the 30th president of the United States?,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Who was the 30th president of the United States?,NOT_IN_KB,False
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+Give one key recommendation from the handbook about safe cooking temperatures.,Refer to the handbook section on safe cooking temperatures.,True
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+Give one key recommendation from the handbook about water treatment.,Refer to the handbook section on water treatment.,True
+Name the tallest mountain in South America.,NOT_IN_KB,False
+How many moons does Mars have?,NOT_IN_KB,False
+Who was the 30th president of the United States?,NOT_IN_KB,False
+"For children aged 6–23 months, how many meals per day does the handbook recommend in addition to breast‑feeding?",2–3 meals,True
+Give one key recommendation from the handbook about food storage.,Refer to the handbook section on food storage.,True
+Give one key recommendation from the handbook about water treatment.,Refer to the handbook section on water treatment.,True
+Give one key recommendation from the handbook about diarrhoea prevention.,Refer to the handbook section on diarrhoea prevention.,True
+"According to the handbook, what is the recommended daily salt intake limit for adults?",5 grams (about one teaspoon),True
+Give one key recommendation from the handbook about physical activity.,Refer to the handbook section on physical activity.,True
+Give one key recommendation from the handbook about calcium.,Refer to the handbook section on calcium.,True
+Give one key recommendation from the handbook about anaemia.,Refer to the handbook section on anaemia.,True
+Give one key recommendation from the handbook about safe cooking temperatures.,Refer to the handbook section on safe cooking temperatures.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Give one key recommendation from the handbook about anaemia.,Refer to the handbook section on anaemia.,True
+Give one key recommendation from the handbook about iodine.,Refer to the handbook section on iodine.,True
+Give one key recommendation from the handbook about safe cooking temperatures.,Refer to the handbook section on safe cooking temperatures.,True
+How many moons does Mars have?,NOT_IN_KB,False
+Give one key recommendation from the handbook about anaemia.,Refer to the handbook section on anaemia.,True
+Give one key recommendation from the handbook about complementary feeding.,Refer to the handbook section on complementary feeding.,True
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give one key recommendation from the handbook about iron.,Refer to the handbook section on iron.,True
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Who was the 30th president of the United States?,NOT_IN_KB,False
+Give one key recommendation from the handbook about balanced diet.,Refer to the handbook section on balanced diet.,True
+Give one key recommendation from the handbook about food storage.,Refer to the handbook section on food storage.,True
+Who invented Bluetooth technology?,NOT_IN_KB,False
+Give the formula for calculating the area of a regular dodecagon.,NOT_IN_KB,False
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+What is the population of Tokyo metropolitan area as of 2024?,NOT_IN_KB,False
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+Give one key recommendation from the handbook about water treatment.,Refer to the handbook section on water treatment.,True
+Give one key recommendation from the handbook about vitamin A.,Refer to the handbook section on vitamin A.,True
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+State the boiling point of mercury in Celsius.,NOT_IN_KB,False
+Give one key recommendation from the handbook about vitamin A.,Refer to the handbook section on vitamin A.,True
+How many moons does Mars have?,NOT_IN_KB,False
+What is the current world record for the men's 100‑meter dash?,NOT_IN_KB,False
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Name the tallest mountain in South America.,NOT_IN_KB,False
+Give one key recommendation from the handbook about physical activity.,Refer to the handbook section on physical activity.,True
+Give one key recommendation from the handbook about physical activity.,Refer to the handbook section on physical activity.,True
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+Give one key recommendation from the handbook about complementary feeding.,Refer to the handbook section on complementary feeding.,True
+Give one key recommendation from the handbook about calcium.,Refer to the handbook section on calcium.,True
+Which composer wrote 'Clair de Lune'?,NOT_IN_KB,False
+Give one key recommendation from the handbook about iodine.,Refer to the handbook section on iodine.,True
+Who was the 30th president of the United States?,NOT_IN_KB,False
+Give one key recommendation from the handbook about physical activity.,Refer to the handbook section on physical activity.,True
+What day of the week did 1 January 2000 fall on?,NOT_IN_KB,False
+Give one key recommendation from the handbook about food processing.,Refer to the handbook section on food processing.,True
+Give one key recommendation from the handbook about anaemia.,Refer to the handbook section on anaemia.,True
+How many moons does Mars have?,NOT_IN_KB,False
+Give one key recommendation from the handbook about food storage.,Refer to the handbook section on food storage.,True
