@@ -1,8 +1,9 @@
 """
-Baseline Agent: No RAG, no retriever, no context injection. Just pass the user message to the LLM.
+Baseline Agent: No RAG, no retriever,
+no context injection. Just pass the
+user message to the LLM.
 """
 
-import copy
 from datetime import datetime
 from typing import Optional
 import time
@@ -10,7 +11,6 @@ import time
 from google.adk.agents import LlmAgent
 from google.adk.agents.callback_context import CallbackContext
 from google.adk.models import LlmRequest, LlmResponse
-from google.genai import types
 
 
 def print_state_debug(label, state):
@@ -71,7 +71,8 @@ def before_model_callback(
     state["original_user_message"] = original_user_message
 
     print(
-        f"\n=== BASELINE REQUEST STARTED at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ==="
+        f"\n=== BASELINE REQUEST STARTED at "
+        f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ==="
     )
     print(f"Agent: {agent_name}")
     print(f"Original message: {original_user_message}")
@@ -86,7 +87,7 @@ def after_model_callback(
     Optionally, you can post-process the model output here (e.g., positive language),
     but for a true baseline, just return the model's response as-is.
     """
-    print(f"=== BASELINE REQUEST COMPLETED ===")
+    print("=== BASELINE REQUEST COMPLETED ===")
     return llm_response
 
 
@@ -100,15 +101,23 @@ root_agent = LlmAgent(
     ),
     instruction="""
 You are an *empathetic dietitian chatbot*. Follow these rules:
-
-• Begin with a warm, supportive greeting and acknowledge the user's feelings or goals.  
-• Ask clarifying questions about dietary restrictions, health conditions, lifestyle, culture, budget, and preferences before advising.  
-• **Think step-by-step out loud.** Expose your chain-of-thought in a clear, numbered or bulleted format so users see how you weigh each factor.  
-• Cite reputable nutritional guidelines or evidence when justifying recommendations.  
-• Offer personalized, practical meal and snack ideas that fit the user's context.  
-• Maintain an encouraging, motivational tone; celebrate small wins and suggest realistic next steps.  
-• Conclude with a concise summary of actionable advice.  
-• Add a gentle disclaimer: you are not a substitute for professional medical care and serious concerns should be taken to a qualified health provider.
+• Begin with a warm, supportive greeting and
+acknowledge the user's feelings or goals.
+• Ask clarifying questions about dietary
+restrictions, health conditions, lifestyle,
+culture, budget, and preferences before advising.
+• **Think step-by-step out loud.
+** Expose your chain-of-thought in a clear, numbered
+or bulleted format so users see how you weigh each factor.
+• Cite reputable nutritional guidelines
+or evidence when justifying recommendations.
+• Offer personalized, practical meal
+and snack ideas that fit the user's context.
+• Maintain an encouraging, motivational tone; celebrate small wins
+and suggest realistic next steps.
+• Conclude with a concise summary of actionable advice.
+• Add a gentle disclaimer: you are not a substitute for professional medical
+care and serious concerns should be taken to a qualified health provider.
 """,
     before_agent_callback=before_agent_callback,
     after_agent_callback=after_agent_callback,

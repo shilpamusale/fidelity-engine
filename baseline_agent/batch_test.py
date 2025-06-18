@@ -2,9 +2,13 @@ import requests
 import time
 import json
 from datetime import datetime
-import uuid
 import csv
 import os
+from pathlib import Path
+
+# Build path to the data folder next to this test file:
+BASE_DIR = Path(__file__).parent
+INPUT_CSV = BASE_DIR / "data" / "prompts.csv"
 
 # Configuration
 BASE_URL = os.getenv("BASE_URL", "https://dietitian-api-411547369.us-central1.run.app")
@@ -28,7 +32,7 @@ def load_questions_from_csv(csv_path):
 
 # Load questions from prompts.csv (relative to this folder)
 # INPUT_CSV = "data/modified_prompts.csv"  # Define input file as a variable
-INPUT_CSV = "data/prompts.csv"  # Define input file as a variable
+# INPUT_CSV = "data/prompts.csv"  # Define input file as a variable
 QUESTIONS = load_questions_from_csv(INPUT_CSV)
 
 # Generate output file name based on agent name and input file
@@ -73,7 +77,7 @@ def main():
     # Send a warm-up query to handle cold starts
     print("Sending warm-up query...")
     try:
-        warm_up_response = send_question(session_id, "hello")
+        # warm_up_response = send_question(session_id, "hello")
         print("Warm-up complete.")
     except Exception as e:
         print(f"Warm-up query failed: {e}")
@@ -97,7 +101,8 @@ def main():
             answer_flagged = None
             flagged_reasons = None
 
-            # The response is a list of events, we need to find the one with the model's response
+            # The response is a list of events,
+            # we need to find the one with the model's response
             for event in response:
                 if event.get("content") and event["content"].get("parts"):
                     for part in event["content"]["parts"]:
@@ -148,7 +153,9 @@ def main():
                 }
             )
             print(
-                f"Q: {question}\nInitial A: {initial_answer}\nFinal A: {answer}\nConfidence: {retriever_confidence}\nElapsed: {elapsed:.2f}s\n---"
+                f"Q: {question}\nInitial A: {initial_answer}\nFinal A:"
+                + "{answer}\nConfidence: {retriever_confidence}\n"
+                + f"Elapsed: {elapsed:.2f}s\n---"
             )
         except Exception as e:
             print(f"Error processing question '{question}': {e}")

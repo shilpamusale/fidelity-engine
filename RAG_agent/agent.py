@@ -2,11 +2,9 @@
 Model Callbacks Example with Before and After Processing
 """
 
-import copy
 from datetime import datetime
 from typing import Optional
 import time
-import numpy as np
 
 from google.adk.agents import LlmAgent
 from google.adk.agents.callback_context import CallbackContext
@@ -128,8 +126,10 @@ def after_model_callback(
     callback_context: CallbackContext, llm_response: LlmResponse
 ) -> Optional[LlmResponse]:
     """
-    Post-process the model output to flag answers that use values or cite sources not present in the context.
-    If answer_flagged is True, override the answer with 'I don't know.'
+    Post-process the model output to flag answers that
+    use values or cite sources not present in the context.
+    If answer_flagged is True, override the answer
+    with 'I don't know.'
     """
     state = callback_context.state
     context = state.get("enhanced_message", "")
@@ -187,7 +187,7 @@ def after_model_callback(
         state["answer_flagged"] = False
         state["flagged_reasons"] = []  # Clear flagged reasons when not flagged
 
-    print(f"=== REQUEST COMPLETED ===")
+    print("=== REQUEST COMPLETED ===")
     return llm_response
 
 
@@ -195,7 +195,8 @@ def after_model_callback(
 root_agent = LlmAgent(
     name="RAG_agent",
     model="gemini-2.0-flash",
-    description="A Dietitian RAG agent that uses the context to answer the user question.",
+    description="A Dietitian RAG agent that "
+    "uses the context to answer the user question.",
     instruction="""
     You are a helpful, empathetic, and positive assistant.
 
@@ -203,30 +204,47 @@ root_agent = LlmAgent(
     - Answer user questions concisely
     - Provide factual information
     - Be friendly, empathetic, and respectful
-    - Only answer using the provided context. If the answer is clearly stated or can be directly inferred from the context, use it in your answer.
-    - If the answer cannot be found or inferred from the context, respond with: "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!"
-    - Do NOT use any information, numbers, or sources from outside the context, even if you know them.
-    - If the context provides a value in a different unit than the question, you may convert units only if the conversion is straightforward and commonly known (e.g., kilograms to pounds, 1 kg ≈ 2.2 lbs). Show your calculation.
-    - If multiple valid answers appear in the context (e.g., different age groups), list them all, citing the source, instead of saying 'I don't know.'
-    - If the context lists several valid values (e.g., children vs. adults), list them all with their labels instead of saying 'I don't know.'
-    - If the context gives a guideline that depends on body weight, state that guideline and explain how the user can calculate their own number.
+    - Only answer using the provided context. If the answer is
+    clearly stated or can be directly
+    inferred from the context, use it in your answer.
+    - If the answer cannot be found or inferred from the context,
+    respond with: "I'm here to help with nutrition and diet questions.
+    That information is outside my scope,
+    but feel free to ask me anything about healthy eating!"
+    - Do NOT use any information, numbers, or sources from outside
+    the context, even if you know them.
+    - If the context provides a value in a different unit than the question,
+    you may convert units only if the conversion is straightforward and commonly known
+    (e.g., kilograms to pounds, 1 kg ≈ 2.2 lbs). Show your calculation.
+    - If multiple valid answers appear in the context
+    (e.g., different age groups), list them all,
+    citing the source, instead of saying 'I don't know.'
+    - If the context lists several valid values (e.g., children vs. adults),
+    list them all with their labels instead of saying 'I don't know.'
+    - If the context gives a guideline that depends on body weight,
+    state that guideline and explain how the user can calculate their own number.
     - Cite the source from the context when possible. Do NOT cite any other sources.
-    - When citing, include only the book title and chunk number as shown in the SOURCE block, e.g., (Food & Nutrition Handbook) [1]. Do not include page numbers.
+    - When citing, include only the book title and chunk number as
+    shown in the SOURCE block, e.g., (Food & Nutrition Handbook) [1].
+    Do not include page numbers.
     - Never invent page numbers or cite any other sources.
-    - When citing, use the exact string from SOURCE, one per parenthesis; e.g. (Food & Nutrition Handbook) [1].
-    - When citing, list exactly one chunk per parenthesis, copied verbatim from the SOURCE block. Do not combine multiple chunks in a single citation.
-
+    - When citing, use the exact string from SOURCE,
+    one per parenthesis; e.g. (Food & Nutrition Handbook) [1].
+    - When citing, list exactly one chunk per parenthesis,
+    copied verbatim from the SOURCE block.
+    Do not combine multiple chunks in a single citation.
     Example:
     SOURCE:
     [1] (Food & Nutrition Handbook) ...brown rice...
     [2] (Food & Nutrition Handbook) ...porridge...
     [3] (Food & Nutrition Handbook) ...porridge...
-
     QUESTION:
     What can you tell me about brown rice and porridge?
-
     ANSWER:
-    Brown rice is a source of selenium (Food & Nutrition Handbook) [1]. It can be used as an ingredient for enriched porridges (Food & Nutrition Handbook) [2] and (Food & Nutrition Handbook) [3].
+    Brown rice is a source of selenium (Food & Nutrition Handbook) [1].
+    It can be used as an ingredient for enriched porridges
+    (Food & Nutrition Handbook)
+    [2] and (Food & Nutrition Handbook) [3].
     """,
     generate_content_config=types.GenerateContentConfig(
         temperature=2.0,

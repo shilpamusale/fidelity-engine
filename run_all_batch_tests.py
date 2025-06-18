@@ -5,7 +5,6 @@ import json
 from datetime import datetime
 import os
 import csv
-import sys
 import glob
 import subprocess
 
@@ -124,7 +123,7 @@ def test_agent_with_csv(agent_name, csv_file):
         # Send warm-up query
         print("Sending warm-up query...")
         try:
-            warm_up_response = send_question(agent_name, session_id, "hello")
+            # warm_up_response = send_question(agent_name, session_id, "hello")
             print("Warm-up complete.")
         except Exception as e:
             print(f"Warm-up query failed: {e}")

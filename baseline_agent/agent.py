@@ -1,8 +1,9 @@
 """
-Baseline Agent: No RAG, no retriever, no context injection. Just pass the user message to the LLM.
+Baseline Agent: No RAG, no retriever,
+no context injection. Just pass the
+user message to the LLM.
 """
 
-import copy
 from datetime import datetime
 from typing import Optional
 import time
@@ -10,7 +11,6 @@ import time
 from google.adk.agents import LlmAgent
 from google.adk.agents.callback_context import CallbackContext
 from google.adk.models import LlmRequest, LlmResponse
-from google.genai import types
 
 
 def print_state_debug(label, state):
@@ -71,7 +71,8 @@ def before_model_callback(
     state["original_user_message"] = original_user_message
 
     print(
-        f"\n=== BASELINE REQUEST STARTED at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ==="
+        f"\n=== BASELINE REQUEST STARTED at "
+        f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ==="
     )
     print(f"Agent: {agent_name}")
     print(f"Original message: {original_user_message}")
@@ -86,7 +87,7 @@ def after_model_callback(
     Optionally, you can post-process the model output here (e.g., positive language),
     but for a true baseline, just return the model's response as-is.
     """
-    print(f"=== BASELINE REQUEST COMPLETED ===")
+    print("=== BASELINE REQUEST COMPLETED ===")
     return llm_response
 
 
@@ -94,7 +95,8 @@ def after_model_callback(
 root_agent = LlmAgent(
     name="baseline_agent",
     model="gemini-2.0-flash",
-    description="A baseline agent that returns the LLM's answer to the user question with no RAG or mitigation.",
+    description="A baseline agent that returns the"
+    + "LLM's answer to the user question with no RAG or mitigation.",
     instruction="""
     You are a helpful and factual assistant.
     Answer user questions concisely and accurately.

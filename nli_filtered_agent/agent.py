@@ -1,4 +1,3 @@
-from datetime import datetime
 from google.adk.agents import LlmAgent
 from google.adk.agents.callback_context import CallbackContext
 from google.adk.models import LlmRequest, LlmResponse
@@ -27,13 +26,13 @@ def extract_latest_user_prompt(llm_request: LlmRequest) -> str:
 
 
 def before_model_callback(callback_context: CallbackContext, llm_request: LlmRequest):
-    # ✅ Get latest user input correctly
+    #  Get latest user input correctly
     prompt_text = extract_latest_user_prompt(llm_request)
 
-    # ✅ Get premise using retriever
+    #  Get premise using retriever
     top_fact = retriever.retrieve(prompt_text)
 
-    # ✅ Reset and update state
+    #  Reset and update state
     callback_context.state["original_user_prompt"] = prompt_text
     callback_context.state["premise"] = top_fact
     callback_context.state["llm_answer"] = ""
@@ -41,7 +40,7 @@ def before_model_callback(callback_context: CallbackContext, llm_request: LlmReq
     callback_context.state["nli_score"] = 0.0
     callback_context.state["hallucination_flag"] = False
 
-    # ✅ Logs
+    #  Logs
     print(f"\n🔍 New User Prompt: {prompt_text}")
     print(f"📘 New Premise: {top_fact if top_fact else '❌ None found'}")
 
@@ -63,13 +62,14 @@ def after_model_callback(callback_context: CallbackContext, llm_response: LlmRes
         callback_context.state["hallucination_flag"] = True  # assume risky
         return llm_response
 
-    # ✅ New version of classify_nli returns full probabilities
+    # New version of classify_nli returns full probabilities
     nli_label, score, all_probs = classify_nli(premise, hypothesis)
 
-    # 🔁 Apply override logic
+    # Apply override logic
     if nli_label == "NEUTRAL" and all_probs["ENTAILMENT"] >= 0.85:
         print(
-            f"🔁 Overriding NEUTRAL → ENTAILMENT (Entailment score = {all_probs['ENTAILMENT']:.3f})"
+            "Overriding NEUTRAL → ENTAILMENT"
+            + f"(Entailment score = {all_probs['ENTAILMENT']:.3f})"
         )
         nli_label = "ENTAILMENT"
         score = all_probs["ENTAILMENT"]
@@ -93,9 +93,10 @@ root_agent = LlmAgent(
     name="nli_filtered_agent",
     model="gemini-2.0-flash",
     # llm_config=llm_config,
-    description="An agent that uses retrieval + NLI to detect hallucinations.",
+    description="An agent that uses retrieval +" "NLI to detect hallucinations.",
     instruction="""
-            You are a helpful and factual assistant. Use only known nutrition facts when answering.
+            You are a helpful and factual assistant. Use only
+            known nutrition facts when answering.
             Keep your response concise (within 250 words).
         """,
     before_model_callback=before_model_callback,

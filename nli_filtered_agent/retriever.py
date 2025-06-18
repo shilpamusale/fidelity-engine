@@ -5,7 +5,9 @@
 # import os
 
 # class RAGRetriever:
-#     def __init__(self, kb_path="nli_filtered_agent/data/full_nutrition_knowledge_base.txt", model_name="all-MiniLM-L6-v2", threshold=0.6):
+#     def __init__(self, kb_path="nli_filtered_agent/
+# data/full_nutrition_knowledge_base.txt",
+# model_name="all-MiniLM-L6-v2", threshold=0.6):
 #         self.kb_path = kb_path
 #         self.model = SentenceTransformer(model_name)
 #         self.threshold = threshold
@@ -71,7 +73,7 @@ class RAGRetriever:
             text = f.read()
 
         chunks = [chunk.strip() for chunk in text.split("\n\n") if chunk.strip()]
-        print(f"[RAG] ✅ Loaded {len(chunks)} knowledge chunks.")
+        print(f"[RAG]  Loaded {len(chunks)} knowledge chunks.")
         return chunks
 
     def _build_index(self, embeddings):
@@ -91,7 +93,7 @@ class RAGRetriever:
     #     for score, idx in zip(scores[0], indices[0]):
     #         chunk = self.chunks[idx]
     #         if score >= self.threshold:
-    #             print(f"[RAG] ✅ Accepted: Score={score:.3f} | Chunk={chunk[:60]}...")
+    #             print(f"[RAG]  Accepted: Score={score:.3f} | Chunk={chunk[:60]}...")
     #             retrieved_chunks.append(chunk)
     #         else:
     #             print(f"[RAG] ❌ Rejected: Score={score:.3f} | Chunk={chunk[:60]}...")
@@ -117,7 +119,7 @@ class RAGRetriever:
         for score, idx in zip(scores[0], indices[0]):
             chunk = self.chunks[idx]
             if score >= self.threshold:
-                print(f"✅ [RAG] Accepted: {score:.3f} → {chunk[:60]}...")
+                print(f" [RAG] Accepted: {score:.3f} → {chunk[:60]}...")
                 retrieved_chunks.append(chunk)
             else:
                 print(f"❌ [RAG] Rejected: {score:.3f} → {chunk[:60]}...")
@@ -127,7 +129,8 @@ class RAGRetriever:
             fallback_chunk = self.chunks[indices[0][0]]
             fallback_score = scores[0][0]
             print(
-                f"⚠️ [RAG] Using fallback: {fallback_score:.3f} → {fallback_chunk[:60]}..."
+                f"⚠️ [RAG] Using fallback: {fallback_score:.3f}"
+                + "→ {fallback_chunk[:60]}..."
             )
             return fallback_chunk
 

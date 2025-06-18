@@ -47,7 +47,7 @@ def classify_nli(premise: str, hypothesis: str):
         "ENTAILMENT": probs[2].item(),
     }
 
-    predicted_label = label_map[torch.argmax(probs).item()]
+    predicted_label = label_map[int(torch.argmax(probs).item())]
     predicted_score = all_probs[predicted_label]
 
     return predicted_label, predicted_score, all_probs

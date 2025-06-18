@@ -55,7 +55,7 @@ def combine_csv_files(prompt_type):
 
         # Show summary statistics
         if "elapsed" in combined_df.columns:
-            print(f"\nTiming Summary by Agent:")
+            print("\nTiming Summary by Agent:")
             print("-" * 50)
             timing_summary = combined_df.groupby("agent")["elapsed"].agg(
                 ["count", "mean", "std", "min", "max"]

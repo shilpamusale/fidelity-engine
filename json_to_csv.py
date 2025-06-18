@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-import json, csv, sys, pathlib, itertools, re
+import json
+import csv
+import sys
+import pathlib
+import itertools
 
 
 def flatten(d, parent_key="", sep="."):

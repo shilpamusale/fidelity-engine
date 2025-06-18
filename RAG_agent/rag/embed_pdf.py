@@ -1,5 +1,8 @@
 import numpy as np
-import os, re, tqdm, PyPDF2, pandas as pd
+import re
+import tqdm
+import PyPDF2
+import pandas as pd
 from typing import List, Dict
 from sentence_transformers import SentenceTransformer
 
@@ -20,7 +23,8 @@ def split_into_sentences(text: str) -> List[str]:
 def open_and_read_pdf(pdf_path: str) -> List[Dict]:
     with open(pdf_path, "rb") as file:
         pdf_reader = PyPDF2.PdfReader(file)
-        # Skip the first 8 pages (i.e., start from page index 8) Table of Contents causing issues
+        # Skip the first 8 pages (i.e., start from page index 8)
+        # Table of Contents causing issues
         return [
             {"page_number": i, "text": text_formatter(page.extract_text() or "")}
             for i, page in enumerate(
