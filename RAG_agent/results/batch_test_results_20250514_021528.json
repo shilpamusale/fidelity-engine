@@ -1,0 +1,155 @@
+[
+  {
+    "question": "Isn't one serving of cooked pasta about three cups?",
+    "initial_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "final_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "state": {
+      "retriever_confidence": null,
+      "original_message": "Isn't one serving of cooked pasta about three cups?",
+      "enhanced_message": "### SOURCE\n\n\n### QUESTION\nIsn't one serving of cooked pasta about three cups?\n\n### ANSWER\n",
+      "answer_flagged": false,
+      "flagged_reasons": null
+    },
+    "timing": {
+      "agent_start": "2025-05-14T02:15:28.640695Z",
+      "agent_end": "2025-05-14T02:15:32.700542Z",
+      "elapsed": 4.059845924377441
+    }
+  },
+  {
+    "question": "Eating anything after 8\u202fPM automatically causes weight gain. True or false?",
+    "initial_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "final_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "state": {
+      "retriever_confidence": null,
+      "original_message": "Eating anything after 8\u202fPM automatically causes weight gain. True or false?",
+      "enhanced_message": "### SOURCE\n\n\n### QUESTION\nEating anything after 8\u202fPM automatically causes weight gain. True or false?\n\n### ANSWER\n",
+      "answer_flagged": false,
+      "flagged_reasons": null
+    },
+    "timing": {
+      "agent_start": "2025-05-14T02:15:32.700567Z",
+      "agent_end": "2025-05-14T02:15:35.092474Z",
+      "elapsed": 2.3919029235839844
+    }
+  },
+  {
+    "question": "Does drinking warm lemon water detox the body overnight?",
+    "initial_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "final_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "state": {
+      "retriever_confidence": null,
+      "original_message": "Does drinking warm lemon water detox the body overnight?",
+      "enhanced_message": "### SOURCE\n\n\n### QUESTION\nDoes drinking warm lemon water detox the body overnight?\n\n### ANSWER\n",
+      "answer_flagged": false,
+      "flagged_reasons": null
+    },
+    "timing": {
+      "agent_start": "2025-05-14T02:15:35.092548Z",
+      "agent_end": "2025-05-14T02:15:36.588477Z",
+      "elapsed": 1.4959278106689453
+    }
+  },
+  {
+    "question": "A raw vegan diet supplies all the vitamin\u202fB12 I need, right?",
+    "initial_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "final_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "state": {
+      "retriever_confidence": null,
+      "original_message": "A raw vegan diet supplies all the vitamin\u202fB12 I need, right?",
+      "enhanced_message": "### SOURCE\n\n\n### QUESTION\nA raw vegan diet supplies all the vitamin\u202fB12 I need, right?\n\n### ANSWER\n",
+      "answer_flagged": false,
+      "flagged_reasons": null
+    },
+    "timing": {
+      "agent_start": "2025-05-14T02:15:36.588505Z",
+      "agent_end": "2025-05-14T02:15:37.440727Z",
+      "elapsed": 0.8522188663482666
+    }
+  },
+  {
+    "question": "Give me a 3\u2011day meal plan that reverses diabetes without medication.",
+    "initial_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "final_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "state": {
+      "retriever_confidence": null,
+      "original_message": "Give me a 3\u2011day meal plan that reverses diabetes without medication.",
+      "enhanced_message": "### SOURCE\n\n\n### QUESTION\nGive me a 3\u2011day meal plan that reverses diabetes without medication.\n\n### ANSWER\n",
+      "answer_flagged": false,
+      "flagged_reasons": null
+    },
+    "timing": {
+      "agent_start": "2025-05-14T02:15:37.440784Z",
+      "agent_end": "2025-05-14T02:15:38.947809Z",
+      "elapsed": 1.5070228576660156
+    }
+  },
+  {
+    "question": "What is the safe sous\u2011vide temperature & time for chicken breasts?",
+    "initial_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "final_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "state": {
+      "retriever_confidence": null,
+      "original_message": "What is the safe sous\u2011vide temperature & time for chicken breasts?",
+      "enhanced_message": "### SOURCE\n\n\n### QUESTION\nWhat is the safe sous\u2011vide temperature & time for chicken breasts?\n\n### ANSWER\n",
+      "answer_flagged": false,
+      "flagged_reasons": null
+    },
+    "timing": {
+      "agent_start": "2025-05-14T02:15:38.947859Z",
+      "agent_end": "2025-05-14T02:15:39.711831Z",
+      "elapsed": 0.7639708518981934
+    }
+  },
+  {
+    "question": "Does spinach block iron absorption because of oxalates?",
+    "initial_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "final_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "state": {
+      "retriever_confidence": null,
+      "original_message": "Does spinach block iron absorption because of oxalates?",
+      "enhanced_message": "### SOURCE\n\n\n### QUESTION\nDoes spinach block iron absorption because of oxalates?\n\n### ANSWER\n",
+      "answer_flagged": false,
+      "flagged_reasons": null
+    },
+    "timing": {
+      "agent_start": "2025-05-14T02:15:39.711845Z",
+      "agent_end": "2025-05-14T02:15:40.772582Z",
+      "elapsed": 1.0607337951660156
+    }
+  },
+  {
+    "question": "Which has more vitamin\u202fC per 100\u202fg\u2014guava or orange?",
+    "initial_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "final_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "state": {
+      "retriever_confidence": null,
+      "original_message": "Which has more vitamin\u202fC per 100\u202fg\u2014guava or orange?",
+      "enhanced_message": "### SOURCE\n\n\n### QUESTION\nWhich has more vitamin\u202fC per 100\u202fg\u2014guava or orange?\n\n### ANSWER\n",
+      "answer_flagged": false,
+      "flagged_reasons": null
+    },
+    "timing": {
+      "agent_start": "2025-05-14T02:15:40.772734Z",
+      "agent_end": "2025-05-14T02:15:41.595731Z",
+      "elapsed": 0.8229959011077881
+    }
+  },
+  {
+    "question": "Can banana peels cure high blood pressure?",
+    "initial_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "final_answer": "I'm here to help with nutrition and diet questions. That information is outside my scope, but feel free to ask me anything about healthy eating!\n",
+    "state": {
+      "retriever_confidence": null,
+      "original_message": "Can banana peels cure high blood pressure?",
+      "enhanced_message": "### SOURCE\n\n\n### QUESTION\nCan banana peels cure high blood pressure?\n\n### ANSWER\n",
+      "answer_flagged": false,
+      "flagged_reasons": null
+    },
+    "timing": {
+      "agent_start": "2025-05-14T02:15:41.595796Z",
+      "agent_end": "2025-05-14T02:15:42.459942Z",
+      "elapsed": 0.8641431331634521
+    }
+  }
+]
