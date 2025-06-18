@@ -49,9 +49,14 @@ from sentence_transformers import SentenceTransformer
 import faiss
 import os
 
+
 class RAGRetriever:
-    def __init__(self, kb_path="nli_filtered_agent/data/full_nutrition_knowledge_base.txt",
-                 model_name="all-MiniLM-L6-v2", threshold=0.6):
+    def __init__(
+        self,
+        kb_path="nli_filtered_agent/data/full_nutrition_knowledge_base.txt",
+        model_name="all-MiniLM-L6-v2",
+        threshold=0.6,
+    ):
         self.kb_path = kb_path
         self.model = SentenceTransformer(model_name)
         self.threshold = threshold
@@ -100,7 +105,6 @@ class RAGRetriever:
 
     #     return " ".join(retrieved_chunks) if retrieved_chunks else ""
 
-
     def retrieve(self, query, top_k=3):
         query_embedding = self.model.encode([query], normalize_embeddings=True)
         scores, indices = self.index.search(query_embedding, top_k)
@@ -122,12 +126,17 @@ class RAGRetriever:
         if not retrieved_chunks and len(indices[0]) > 0:
             fallback_chunk = self.chunks[indices[0][0]]
             fallback_score = scores[0][0]
-            print(f"⚠️ [RAG] Using fallback: {fallback_score:.3f} → {fallback_chunk[:60]}...")
+            print(
+                f"⚠️ [RAG] Using fallback: {fallback_score:.3f} → {fallback_chunk[:60]}..."
+            )
             return fallback_chunk
 
         result = " ".join(retrieved_chunks) if retrieved_chunks else ""
-        print(f"\n📘 [RAG FINAL] Returning Premise:\n{result if result else '❌ EMPTY'}")
+        print(
+            f"\n📘 [RAG FINAL] Returning Premise:\n{result if result else '❌ EMPTY'}"
+        )
         return result
+
 
 # 🧪 CLI Debugging
 if __name__ == "__main__":

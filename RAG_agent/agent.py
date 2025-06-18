@@ -15,9 +15,9 @@ from google.genai import types
 from .rag.retriever import Retriever
 
 retriever = Retriever(
-    csv_path="RAG_agent/data/embeddings.csv",
-    model_name="BAAI/bge-large-en-v1.5"
+    csv_path="RAG_agent/data/embeddings.csv", model_name="BAAI/bge-large-en-v1.5"
 )
+
 
 def print_state_debug(label, state):
     print(f"[DEBUG] {label}:")
@@ -30,18 +30,24 @@ def print_state_debug(label, state):
     except Exception as e:
         print(f"  <Could not print state: {e}>")
 
+
 def before_agent_callback(callback_context):
     now = time.time()
     callback_context.state["agent_start_time"] = now
-    callback_context.state["agent_start_time_str"] = datetime.fromtimestamp(now).isoformat()
+    callback_context.state["agent_start_time_str"] = datetime.fromtimestamp(
+        now
+    ).isoformat()
     print("Agent processing started.")
     print_state_debug("State at end of before_agent_callback", callback_context.state)
     return None
 
+
 def after_agent_callback(callback_context):
     now = time.time()
     callback_context.state["agent_end_time"] = now
-    callback_context.state["agent_end_time_str"] = datetime.fromtimestamp(now).isoformat()
+    callback_context.state["agent_end_time_str"] = datetime.fromtimestamp(
+        now
+    ).isoformat()
     agent_start = callback_context.state.get("agent_start_time")
     if agent_start:
         elapsed = now - agent_start
@@ -49,6 +55,7 @@ def after_agent_callback(callback_context):
         print(f"Agent processing took {elapsed:.2f} seconds.")
     print_state_debug("State at end of after_agent_callback", callback_context.state)
     return None
+
 
 def before_model_callback(
     callback_context: CallbackContext, llm_request: LlmRequest
@@ -84,7 +91,8 @@ def before_model_callback(
     # 2. Build a numbered SOURCE block with book title and page
     if retrieved_chunks:
         numbered_chunks = "\n\n".join(
-            f"[{i+1}] ({BOOK_TITLE}) {txt}" for i, (txt, page, _) in enumerate(retrieved_chunks)
+            f"[{i+1}] ({BOOK_TITLE}) {txt}"
+            for i, (txt, page, _) in enumerate(retrieved_chunks)
         )
         state["retriever_confidence"] = float(retrieved_chunks[0][2])
     else:
@@ -105,13 +113,16 @@ def before_model_callback(
     ]
 
     # Log the request
-    print(f"\n=== REQUEST STARTED at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===")
+    print(
+        f"\n=== REQUEST STARTED at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ==="
+    )
     print(f"Agent: {agent_name}")
     print(f"Original message: {original_user_message}")
     print(f"Enhanced message: {prompt_text[:100]}...")
     print("✓ Request approved for processing")
 
     return None
+
 
 def after_model_callback(
     callback_context: CallbackContext, llm_response: LlmResponse
@@ -136,17 +147,26 @@ def after_model_callback(
 
     # Check for citations not in context
     import re
-    citations = re.findall(r'\(([^)]+)\)', response_text)
+
+    citations = re.findall(r"\(([^)]+)\)", response_text)
     for citation in citations:
         if citation.lower() not in context.lower():
             flagged = True
             flagged_reasons.append(f"Citation '{citation}' not found in context.")
 
     # Allow common metric-to-English conversions
-    ALLOWED_CONVERSIONS = {"2.2", "0.45", "0.454", "0.4536", "0.5", "1.61", "3.28"}  # kg<->lb, g/lb, km/mi, m/ft, etc.
+    ALLOWED_CONVERSIONS = {
+        "2.2",
+        "0.45",
+        "0.454",
+        "0.4536",
+        "0.5",
+        "1.61",
+        "3.28",
+    }  # kg<->lb, g/lb, km/mi, m/ft, etc.
 
     # Check for numbers not in context (simple heuristic)
-    numbers_in_answer = re.findall(r'\b\d+(?:\.\d+)?\b', response_text)
+    numbers_in_answer = re.findall(r"\b\d+(?:\.\d+)?\b", response_text)
     for number in numbers_in_answer:
         if number not in context and number not in ALLOWED_CONVERSIONS:
             flagged = True
@@ -159,13 +179,17 @@ def after_model_callback(
         # Override the answer with abstention
         abstain_text = "I don't know."
         from google.genai.types import Content, Part
-        return LlmResponse(content=Content(role="model", parts=[Part(text=abstain_text)]))
+
+        return LlmResponse(
+            content=Content(role="model", parts=[Part(text=abstain_text)])
+        )
     else:
         state["answer_flagged"] = False
         state["flagged_reasons"] = []  # Clear flagged reasons when not flagged
 
     print(f"=== REQUEST COMPLETED ===")
     return llm_response
+
 
 # Create the Agent
 root_agent = LlmAgent(
@@ -206,12 +230,12 @@ root_agent = LlmAgent(
     """,
     generate_content_config=types.GenerateContentConfig(
         temperature=2.0,
-        #top_p=0.9,
+        # top_p=0.9,
         top_p=0.5,
-        max_output_tokens=512
+        max_output_tokens=512,
     ),
     before_agent_callback=before_agent_callback,
     after_agent_callback=after_agent_callback,
     before_model_callback=before_model_callback,
-    after_model_callback=after_model_callback
+    after_model_callback=after_model_callback,
 )

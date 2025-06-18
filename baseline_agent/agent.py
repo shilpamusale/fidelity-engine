@@ -24,18 +24,24 @@ def print_state_debug(label, state):
     except Exception as e:
         print(f"  <Could not print state: {e}>")
 
+
 def before_agent_callback(callback_context):
     now = time.time()
     callback_context.state["agent_start_time"] = now
-    callback_context.state["agent_start_time_str"] = datetime.fromtimestamp(now).isoformat()
+    callback_context.state["agent_start_time_str"] = datetime.fromtimestamp(
+        now
+    ).isoformat()
     print("Agent processing started.")
     print_state_debug("State at end of before_agent_callback", callback_context.state)
     return None
 
+
 def after_agent_callback(callback_context):
     now = time.time()
     callback_context.state["agent_end_time"] = now
-    callback_context.state["agent_end_time_str"] = datetime.fromtimestamp(now).isoformat()
+    callback_context.state["agent_end_time_str"] = datetime.fromtimestamp(
+        now
+    ).isoformat()
     agent_start = callback_context.state.get("agent_start_time")
     if agent_start:
         elapsed = now - agent_start
@@ -64,7 +70,9 @@ def before_model_callback(
                     break
     state["original_user_message"] = original_user_message
 
-    print(f"\n=== BASELINE REQUEST STARTED at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===")
+    print(
+        f"\n=== BASELINE REQUEST STARTED at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ==="
+    )
     print(f"Agent: {agent_name}")
     print(f"Original message: {original_user_message}")
     print("✓ Request approved for processing (no RAG, no context)")
@@ -95,5 +103,5 @@ root_agent = LlmAgent(
     before_agent_callback=before_agent_callback,
     after_agent_callback=after_agent_callback,
     before_model_callback=before_model_callback,
-    after_model_callback=after_model_callback
+    after_model_callback=after_model_callback,
 )

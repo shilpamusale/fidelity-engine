@@ -2,6 +2,7 @@ from datetime import datetime
 from google.adk.agents import LlmAgent
 from google.adk.agents.callback_context import CallbackContext
 from google.adk.models import LlmRequest, LlmResponse
+
 # from google.adk.models import LlmConfig
 
 # from .nli_verifier import classify_nli
@@ -9,6 +10,7 @@ from google.adk.models import LlmRequest, LlmResponse
 
 from .nli_verifier import classify_nli
 from .rag_wrapper import NliRetrieverWrapper
+
 retriever = NliRetrieverWrapper()
 
 
@@ -44,7 +46,6 @@ def before_model_callback(callback_context: CallbackContext, llm_request: LlmReq
     print(f"📘 New Premise: {top_fact if top_fact else '❌ None found'}")
 
 
-
 def after_model_callback(callback_context: CallbackContext, llm_response: LlmResponse):
     hypothesis = ""
     for part in llm_response.content.parts:
@@ -67,7 +68,9 @@ def after_model_callback(callback_context: CallbackContext, llm_response: LlmRes
 
     # 🔁 Apply override logic
     if nli_label == "NEUTRAL" and all_probs["ENTAILMENT"] >= 0.85:
-        print(f"🔁 Overriding NEUTRAL → ENTAILMENT (Entailment score = {all_probs['ENTAILMENT']:.3f})")
+        print(
+            f"🔁 Overriding NEUTRAL → ENTAILMENT (Entailment score = {all_probs['ENTAILMENT']:.3f})"
+        )
         nli_label = "ENTAILMENT"
         score = all_probs["ENTAILMENT"]
 

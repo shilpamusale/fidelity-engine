@@ -27,6 +27,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name)
 model.eval()  # optional: turn off dropout
 
+
 def classify_nli(premise: str, hypothesis: str):
     """
     Classifies the NLI relationship and returns:
@@ -43,7 +44,7 @@ def classify_nli(premise: str, hypothesis: str):
     all_probs = {
         "CONTRADICTION": probs[0].item(),
         "NEUTRAL": probs[1].item(),
-        "ENTAILMENT": probs[2].item()
+        "ENTAILMENT": probs[2].item(),
     }
 
     predicted_label = label_map[torch.argmax(probs).item()]

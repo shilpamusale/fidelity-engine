@@ -10,10 +10,7 @@ for prompt, content in kb.items():
     premise = content["premise"]
     answers = content["answers"]
 
-    output[prompt] = {
-        "premise": premise,
-        "results": {}
-    }
+    output[prompt] = {"premise": premise, "results": {}}
 
     for label, hypothesis in answers.items():
         print(f"Running NLI for: {prompt} ({label})")
@@ -21,7 +18,7 @@ for prompt, content in kb.items():
         output[prompt]["results"][label] = {
             "answer": hypothesis,
             "nli_label": nli_label,
-            "score": round(score, 4)
+            "score": round(score, 4),
         }
 
 # Save results to JSON

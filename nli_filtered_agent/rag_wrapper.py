@@ -2,6 +2,7 @@
 
 from RAG_agent.rag.retriever import Retriever as RAGRetriever
 
+
 class NliRetrieverWrapper:
     def __init__(self, csv_path="RAG_agent/data/embeddings.csv"):
         self.rag = RAGRetriever(csv_path=csv_path)
