@@ -29,3 +29,8 @@ build/
 
 # OS specific files
 .DS_Store
+
+# Ignore generated result files
+*.json
+*_prompts_batch_*.csv
+archive/
