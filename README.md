@@ -6,7 +6,7 @@ This project demonstrates an end-to-end workflow from data ingestion and agentic
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 **Fidelity Engine - Live on Google Cloud Run**  
 *(Note: This is a placeholder link. It will be updated upon final deployment.)*
@@ -15,7 +15,56 @@ This project demonstrates an end-to-end workflow from data ingestion and agentic
 
 ---
 
-## ✨ Key Features
+## Project Vision: A Mock Demo
+
+This mock interaction demonstrates the intended functionality of the hierarchical agent system when complete.
+
+---
+
+**User Query:**  
+> *Compare the primary outcomes and key exclusion criteria for the two most recent Phase 3 glioblastoma trials involving immunotherapy.*
+
+---
+
+**System Response & Reasoning:**
+
+**ROUTER AGENT THOUGHT PROCESS:**
+- The user is asking to "compare" two entities, which suggests a multi-step reasoning process.
+- The query involves "primary outcomes" and "exclusion criteria," which are high-stakes medical details where accuracy is critical.
+- A simple RAG lookup might miss the comparative nuance, and a standard CoT might hallucinate specific criteria.
+- Therefore, the highest-fidelity tool is required.  
+  **TOOL SELECTED:** *NLI-Filtered Agent Tool*
+
+---
+
+**Final Answer:**
+
+Based on a review of recent Phase 3 glioblastoma trials involving immunotherapy, here is a comparison of the primary outcomes and key exclusion criteria for the two most recent studies:
+
+---
+
+**Trial NCT04512345 (Active-IMVax Study)**
+- **Primary Outcome:** Overall Survival (OS) at 24 months.
+- **Key Exclusion Criteria:**
+  - Prior treatment with any checkpoint inhibitors.
+  - History of autoimmune disease.
+  - Presence of brain metastases outside the primary tumor site.
+
+**Trial NCT04876543 (Glio-Boost Trial)**
+- **Primary Outcome:** Progression-Free Survival (PFS) at 12 months.
+- **Key Exclusion Criteria:**
+  - Patients with an ECOG performance status greater than 1.
+  - Prior radiation therapy to the brain.
+  - Use of systemic corticosteroids within 10 days of enrollment.
+
+---
+
+**VERIFICATION STATUS:** All claims have been verified against the source documents using Natural Language Inference.  
+**SOURCES:** NCT04512345_protocol.pdf, NCT04876543_summary.pdf
+
+---
+
+## Key Features
 
 - **Hierarchical Multi-Agent System:**  
   An intelligent "Router" agent analyzes incoming queries and routes them to the most appropriate specialist agent, optimizing for performance and accuracy.
@@ -34,7 +83,7 @@ This project demonstrates an end-to-end workflow from data ingestion and agentic
 
 ---
 
-## 🏛️ Architecture Overview
+##  Architecture Overview
 
 The system uses a Router agent to intelligently manage a pool of specialist tools. This allows for a dynamic response strategy based on query complexity.
 
@@ -64,7 +113,7 @@ graph TD
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 <table>
 <tr>
@@ -103,7 +152,7 @@ graph TD
 
 ---
 
-## 📋 Getting Started
+## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
 
@@ -155,18 +204,18 @@ python -m tests.run_benchmark
 
 ---
 
-## 📈 Evaluation Results
+## Evaluation Results
 
 *(Placeholder for the final results table)*
 
 | Agent Architecture   | TruthfulQA Accuracy | Notes                                         |
 |----------------------|--------------------|-----------------------------------------------|
-| Baseline LLM         | 35%                | Prone to hallucination on complex criteria.   |
-| RAG Agent            | 65%                | Strong improvement on factual recall.         |
-| Hierarchical System  | 80%                | Best overall performance and efficiency.      |
+| Baseline LLM         | --                 | Prone to hallucination on complex criteria.   |
+| RAG Agent            | --                 | Strong improvement on factual recall.         |
+| Hierarchical System  | --                 | Best overall performance and efficiency.      |
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
