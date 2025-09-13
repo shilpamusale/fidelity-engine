@@ -1,32 +1,20 @@
-# Git
+# Git files
 .git
 .gitignore
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
+# Python virtual environment
 .venv/
 venv/
-ENV/
 
-# IDE
-.vscode/
-.idea/
+# Python cache
+__pycache__/
+*.pyc
 
-# OS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Local secrets and config
+.env
+mypy.ini
 
-# Project specific
-*.log
-*.csv
-*.json
-!config.json 
+# Local development artifacts
+.coverage
+archive/
+results/

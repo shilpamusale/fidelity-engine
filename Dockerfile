@@ -25,4 +25,4 @@ ENV PYTHONUNBUFFERED=1
 #CMD ["adk", "web"] 
 #CMD ["adk", "web", "--host", "0.0.0.0", "--port", "8080"]
 # ...
-CMD ["adk", "web", "--port", "8080"]
+CMD adk web . --port $PORT
