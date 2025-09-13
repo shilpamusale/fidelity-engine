@@ -1,172 +1,172 @@
-# Hallucination Mitigation Research Project
+# Fidelity Engine: A Hierarchical Multi-Agent System for Clinical Trial Analysis
 
-## Project Overview
+Fidelity Engine is a sophisticated research project that moves beyond standard RAG to build a hierarchical multi-agent system for mitigating hallucinations in the high-stakes domain of clinical trial analysis. The system features an intelligent "Router" agent that delegates complex queries to a suite of specialized agents, ensuring a balance of accuracy, speed, and cost-efficiency.
 
-This project implements a hallucination mitigation research framework using Google's Agent Development Kit (ADK). The primary goal is to explore and compare different agent architectures—specifically RAG (Retrieval-Augmented Generation), CoT (Chain-of-Thought), and NLI (Natural Language Inference) filtered agents—in their ability to reduce hallucinations in AI-powered chatbots. The system provides a web-based interface for interacting with these agents and visualizing their reasoning processes, resources used, and final answers, thereby offering insights into their hallucination mitigation strategies.
+This project demonstrates an end-to-end workflow from data ingestion and agentic system design to containerization and deployment on Google Cloud.
 
-## Deployed Application
+---
 
-The application is currently deployed and accessible via the following link:
+## 🚀 Live Demo
 
-[https://dietitian-api-411547369.us-central1.run.app/dev-ui?app=RAG_agent](https://dietitian-api-411547369.us-central1.run.app/dev-ui?app=RAG_agent)
+**Fidelity Engine - Live on Google Cloud Run**  
+*(Note: This is a placeholder link. It will be updated upon final deployment.)*
 
+*(Placeholder for a GIF showing the application answering a complex question)*
 
+---
 
-## High-Level Design
+## ✨ Key Features
 
-The system is designed around a modular architecture, leveraging Google's ADK to facilitate the development and deployment of various agent types. At a high level, the architecture consists of:
+- **Hierarchical Multi-Agent System:**  
+  An intelligent "Router" agent analyzes incoming queries and routes them to the most appropriate specialist agent, optimizing for performance and accuracy.
 
-1.  **Agent Development Kit (ADK) Core**: Provides the foundational framework for building, testing, and deploying AI agents.
-2.  **Multiple Agent Implementations**: Separate modules for RAG, CoT, and NLI-filtered agents, each designed to address hallucination through distinct mechanisms.
-3.  **Web User Interface (UI)**: A Gradio-based interface (as suggested by the previous README) that allows users to select an agent, input queries, and view the agent's responses, including detailed state information (reasoning, resources, final answer).
-4.  **Data Management**: Handles the ingestion and processing of knowledge bases (e.g., `nutrition_handbook.pdf` for the RAG agent) and manages test prompts and results.
-5.  **Evaluation and Monitoring**: Tools and frameworks (as indicated by the `batch_test.py` and `results` directories) for evaluating agent performance and tracking metrics related to hallucination.
+- **Specialized Agentic Tools:**  
+  A suite of worker agents, each tailored for a specific task:
+    - **RAG Agent:** For fast and efficient factual lookups.
+    - **Chain-of-Thought (CoT) Agent:** For complex queries requiring multi-step reasoning or comparisons.
+    - **NLI-Filtered Agent:** For high-stakes queries requiring explicit factual verification against source documents.
 
-This high-level design emphasizes flexibility and extensibility, allowing for easy integration of new agent types and evaluation methodologies.
+- **Cost & Latency Aware:**  
+  The tiered agent system is inherently efficient, using the most powerful (and expensive) models only when absolutely necessary.
 
-## Low-Level Design
+- **Cloud-Native Deployment:**  
+  Fully containerized with Docker and deployed as a scalable, public web service on Google Cloud Run.
 
-### Agent Implementations
+---
 
-Each agent (RAG, CoT, NLI-filtered) is implemented as a distinct ADK agent, typically residing in its own directory (e.g., `RAG_agent`, `COT_agent`, `nli_filtered_agent`).
+## 🏛️ Architecture Overview
 
-*   **RAG Agent**: This agent likely utilizes the `rag` subdirectory, which contains `embed_pdf.py` for embedding document content (e.g., `nutrition_handbook.pdf`) and `retriever.py` for retrieving relevant information based on user queries. The `agent.py` file orchestrates the retrieval and generation process.
-*   **CoT Agent**: The `COT_agent` directory contains `agent.py` and `batch_test.py`. The CoT agent is expected to generate intermediate reasoning steps to arrive at a final answer, which can be inspected in the UI's state section.
-*   **NLI-Filtered Agent**: The `nli_filtered_agent` includes `nli_verifier.py` and `rag_wrapper.py`, suggesting that it uses Natural Language Inference to verify the factual consistency of generated responses, potentially filtering out hallucinated content. It also appears to leverage a knowledge base (`full_nutrition_knowledge_base.txt`) and a retriever.
+The system uses a Router agent to intelligently manage a pool of specialist tools. This allows for a dynamic response strategy based on query complexity.
 
-### Data Flow
+```mermaid
+graph TD
+    A[User Query] --> B{Router Agent};
+    B -- Simple Fact? --> C[RAG Agent Tool];
+    B -- Multi-Step Reasoning? --> D[CoT Agent Tool];
+    B -- High-Stakes Accuracy? --> E[NLI-Filtered Agent Tool];
+    C -- Sourced Answer --> F[Final Response];
+    D -- Reasoned Answer --> F;
+    E -- Verified Answer --> F;
 
-1.  **User Query**: A user submits a query through the web UI.
-2.  **Agent Selection**: The UI routes the query to the selected ADK agent (RAG, CoT, or NLI-filtered).
-3.  **Agent Processing**: The selected agent processes the query. This may involve:
-    *   **Retrieval**: For RAG and NLI-filtered agents, relevant information is retrieved from their respective knowledge bases.
-    *   **Reasoning**: CoT agents generate a chain of thought.
-    *   **Verification**: NLI-filtered agents perform factual verification.
-4.  **Response Generation**: The agent generates a response based on its processing.
-5.  **State Information**: During processing, the agent populates a 'state' object with details like `reasoning`, `resources`, and `final_answer`. This state is then displayed in the UI.
-6.  **UI Display**: The UI renders the agent's response and the detailed state information, allowing users to understand the agent's internal workings and hallucination mitigation strategies.
+    subgraph "Knowledge Base"
+        G[Clinical Trial Documents <br> (from ClinicalTrials.gov)]
+    end
 
-### Dockerization
+    C --> G;
+    D --> G;
+    E --> G;
 
-The `Dockerfile` at the root of the `TestSuite` directory indicates that the entire application can be containerized, ensuring consistent environments for development, testing, and deployment. The `requirements.txt` lists all necessary Python dependencies.
+    style A fill:#FFD580,stroke:#333
+    style B fill:#A8E6A3,stroke:#333
+    style C,D,E fill:#9EC9FF,stroke:#333
+    style F fill:#D7B3FF,stroke:#333
+```
 
+---
 
+## 🛠️ Tech Stack
 
-## Getting Started
+<table>
+<tr>
+<td align="center" width="96">
+  <a href="https://www.python.org/">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="48" height="48" alt="Python" />
+  </a><br>Python
+</td>
+<td align="center" width="96">
+  <a href="https://cloud.google.com/vertex-ai/docs/generative-ai/model-garden/gemini-sdk-overview">
+    <img src="https://avatars.githubusercontent.com/u/1342004?s=200&v=4" width="48" height="48" alt="Google Gemini" />
+  </a><br>Google Gemini
+</td>
+<td align="center" width="96">
+  <a href="https://github.com/google/agent-development-kit">
+    <img src="https://avatars.githubusercontent.com/u/1342004?s=200&v=4" width="48" height="48" alt="Google ADK" />
+  </a><br>Google ADK
+</td>
+<td align="center" width="96">
+  <a href="https://cloud.google.com/run">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" width="48" height="48" alt="Google Cloud" />
+  </a><br>Google Cloud
+</td>
+<td align="center" width="96">
+  <a href="https://www.docker.com/">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="48" height="48" alt="Docker" />
+  </a><br>Docker
+</td>
+<td align="center" width="96">
+  <a href="https://docs.pytest.org/">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytest/pytest-original.svg" width="48" height="48" alt="Pytest" />
+  </a><br>Pytest
+</td>
+</tr>
+</table>
 
-To run this project locally, you will need to have Google's Agent Development Kit (ADK) installed, along with Python and Docker.
+---
+
+## 📋 Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine.
 
 ### Prerequisites
 
-*   **Python 3.9+**: Ensure you have a compatible Python version installed.
-*   **Google ADK**: Install the ADK by following the official documentation. You can typically install it via pip:
-    ```bash
-    pip install google-adk
-    ```
-*   **Docker**: For building and running the application in a containerized environment.
+- Python 3.11+
+- Google Cloud SDK (`gcloud` CLI)
+- Docker
 
-### Local Installation and Setup
+### Local Setup
 
-1.  **Clone the repository (or extract the provided `TestSuite.zip`):**
-    If you received a `.zip` file, extract it to your desired working directory. If it's a Git repository, clone it:
-    ```bash
-    git clone https://github.com/jskoerner/TestSuite.git
-    cd TestSuite
-    ```
-    *Note: The provided `TestSuite.zip` contains a nested `TestSuite` directory. Navigate into the inner `TestSuite` directory after extraction.* For example, if you extracted to `/home/ubuntu/TestSuite`, then `cd /home/ubuntu/TestSuite/TestSuite`.
+Clone the repository:
+```sh
+git clone https://github.com/shilpamusale/fidelity-engine.git
+cd fidelity-engine
+```
 
-2.  **Install Python dependencies:**
-    Navigate to the root of the `TestSuite` project (where `requirements.txt` is located) and install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
+Create a virtual environment and install dependencies:
+```sh
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
-3.  **Run the ADK web interface:**
-    From the root of the `TestSuite` project, execute the following command to start the ADK web interface:
-    ```bash
-    adk web
-    ```
-    This will typically launch the web interface in your browser at `http://localhost:8000` (or a similar port).
+Set up your `.env` file:
+```sh
+cp .env.example .env
+# Now, edit the .env file with your key
+```
 
-### Building and Running with Docker
+### Running the Data Pipeline
 
-To containerize the application using Docker, follow these steps from the root of the `TestSuite` project (where the `Dockerfile` is located):
+To build the knowledge base from scratch, run the data sourcing script (details to be added):
+```sh
+python -m data.build_knowledge_base --condition "Type 2 Diabetes"
+```
 
-1.  **Build the Docker image:**
-    ```bash
-    docker build -t hallucination-mitigation-adk .
-    ```
+### Running the Application Locally
 
-2.  **Run the Docker container:**
-    ```bash
-    docker run -p 8000:8000 hallucination-mitigation-adk
-    ```
-    This will map port 8000 from the container to port 8000 on your local machine, allowing you to access the ADK web interface at `http://localhost:8000`.
+Start the agent service in one terminal:
+```sh
+adk web . --port 8001
+```
 
+In a second terminal, run the benchmark or a test script:
+```sh
+python -m tests.run_benchmark
+```
 
+---
 
-## Usage
+## 📈 Evaluation Results
 
-Once the ADK web interface is running (either locally via `adk web` or through Docker), you can interact with the different agents:
+*(Placeholder for the final results table)*
 
-1.  **Access the Web Interface**: Open your web browser and navigate to `http://localhost:8000` (or the URL provided by `adk web`).
+| Agent Architecture   | TruthfulQA Accuracy | Notes                                         |
+|----------------------|--------------------|-----------------------------------------------|
+| Baseline LLM         | 35%                | Prone to hallucination on complex criteria.   |
+| RAG Agent            | 65%                | Strong improvement on factual recall.         |
+| Hierarchical System  | 80%                | Best overall performance and efficiency.      |
 
-2.  **Select an ADK Agent**: On the left-hand side of the interface, you will find a dropdown menu. From this dropdown, you can select the desired ADK agent to interact with. The available agents are typically:
-    *   `RAG_agent` (Retrieval-Augmented Generation)
-    *   `CoT_agent` (Chain-of-Thought)
-    *   `nli_filtered_agent` (Natural Language Inference filtered)
+---
 
-3.  **Interact with the Chatbot**: Once an agent is selected, you can type your queries into the chat input field at the bottom of the screen and press Enter.
+## 📜 License
 
-4.  **Analyze the State Section**: The right-hand side of the interface features a "State" section. This section is crucial for understanding the agent's internal workings and hallucination mitigation process. It provides:
-    *   **Reasoning**: The steps or logic the agent followed to arrive at its answer.
-    *   **Resources**: The external information or knowledge base entries the agent utilized.
-    *   **Final Answer**: The agent's ultimate response to your query.
-
-This detailed state information allows for a transparent analysis of how each agent addresses potential hallucinations and provides its answer.
-
-
-
-
-## Demo Images
-
-Here are some screenshots illustrating the application's interface and functionality:
-
-### RAG Agent Interface
-![RAG Agent Interface](images/image_rag.png)
-
-### CoT Agent Interaction
-![NLI Filtered Agent Interaction](images/image_cot.png)
-
-### NLI Filtered Agent Interaction
-![NLI Filtered Agent Interaction](images/image_nli.png)
-
-### Agent State Section
-![Agent State Section](images/image_state.png)
-
-
-
-## Contributing
-
-Contributions are welcome! If you have suggestions for improving this project, please feel free to:
-
-1.  Fork the repository.
-2.  Create a new branch (`git checkout -b feature/YourFeature`).
-3.  Make your changes.
-4.  Commit your changes (`git commit -m 'Add some feature'`).
-5.  Push to the branch (`git push origin feature/YourFeature`).
-6.  Open a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the `LICENSE` file for details.
-
-
-
-## Deployment
-
-The application is deployed on Google Cloud Run and can be accessed at:
-
-[https://dietitian-api-411547369.us-central1.run.app/dev-ui?app=RAG_agent](https://dietitian-api-411547369.us-central1.run.app/dev-ui?app=RAG_agent)
-
-
+This project is licensed under the MIT License - see the LICENSE file for details.
