@@ -82,33 +82,40 @@ Based on a review of recent Phase 3 glioblastoma trials involving immunotherapy,
   Fully containerized with Docker and deployed as a scalable, public web service on Google Cloud Run.
 
 ---
-
-##  Architecture Overview
+## Architecture Overview
 
 The system uses a Router agent to intelligently manage a pool of specialist tools. This allows for a dynamic response strategy based on query complexity.
 
+
 ```mermaid
 graph TD
-    A[User Query] --> B{Router Agent};
-    B -- Simple Fact? --> C[RAG Agent Tool];
-    B -- Multi-Step Reasoning? --> D[CoT Agent Tool];
-    B -- High-Stakes Accuracy? --> E[NLI-Filtered Agent Tool];
-    C -- Sourced Answer --> F[Final Response];
-    D -- Reasoned Answer --> F;
-    E -- Verified Answer --> F;
+    %% Main nodes
+    A[User Query] --> B{Router Agent}
+    B -- Simple Fact? --> C[RAG Agent Tool]
+    B -- Multi-Step Reasoning? --> D[CoT Agent Tool]
+    B -- High-Stakes Accuracy? --> E[NLI-Filtered Agent Tool]
+    C -- Sourced Answer --> F[Final Response]
+    D -- Reasoned Answer --> F
+    E -- Verified Answer --> F
 
-    subgraph "Knowledge Base"
-        G[Clinical Trial Documents <br> (from ClinicalTrials.gov)]
+    %% Knowledge Base
+    subgraph Knowledge_Base["Knowledge Base"]
+        G["Clinical Trial Documents (from ClinicalTrials.gov)"]
     end
 
-    C --> G;
-    D --> G;
-    E --> G;
+    C --> G
+    D --> G
+    E --> G
 
-    style A fill:#FFD580,stroke:#333
-    style B fill:#A8E6A3,stroke:#333
-    style C,D,E fill:#9EC9FF,stroke:#333
-    style F fill:#D7B3FF,stroke:#333
+    %% Color styles for readability
+    style A fill:#FFD700,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#98FB98,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#1E90FF,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#20B2AA,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#6A5ACD,stroke:#333,stroke-width:2px,color:#fff
+    style F fill:#FFB6C1,stroke:#333,stroke-width:2px,color:#000
+    style G fill:#333,stroke:#333,stroke-width:2px,color:#fff
+    style Knowledge_Base fill:#f7f7f7,stroke:#333,stroke-width:2px,color:#000
 ```
 
 ---
@@ -217,5 +224,6 @@ python -m tests.run_benchmark
 ---
 
 ## License
+
 
 This project is licensed under the MIT License - see the LICENSE file for details.
